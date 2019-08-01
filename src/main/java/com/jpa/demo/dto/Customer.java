@@ -22,6 +22,9 @@ public class Customer {
     @Column(name="birth_date")
     private Date birthDate;
 
+    @Column(name="email")
+    private String email;
+
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "cid")
     private Set<Address> addresses;
@@ -66,6 +69,16 @@ public class Customer {
         this.addresses = addresses;
     }
 
+    public String getEmail()
+    {
+        return email;
+    }
+
+    public void setEmail(String email)
+    {
+        this.email = email;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
@@ -73,6 +86,7 @@ public class Customer {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", birthDate=" + birthDate +
+                ", email=" + email +
                 //", addresses=" + addresses +
                 '}';
     }
