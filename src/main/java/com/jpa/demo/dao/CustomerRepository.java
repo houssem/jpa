@@ -12,5 +12,5 @@ public interface CustomerRepository {
 
     void removeCustomer(Customer customer);
 
-    List<Customer> findCustomerByCritera();
+    List<Customer> findCustomerByCriteria();
 }

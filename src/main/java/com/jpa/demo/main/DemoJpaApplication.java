@@ -86,7 +86,7 @@ public class DemoJpaApplication {
 		Customer cus = customerRepository.findCustomerById(1l);
 		System.out.println("1) ====>"+cus);
 
-		List<Customer> cc = customerRepository.findCustomerByCritera();
+		List<Customer> cc = customerRepository.findCustomerByCriteria();
 		System.out.println("2) ====>"+cc);
 		if (!CollectionUtils.isEmpty(cc)) {
 			cc.forEach(cuss -> {
