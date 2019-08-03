@@ -63,11 +63,18 @@ public class DemoJpaApplication {
 		customer2.setEmail("walid.kallelgmail.com");
 		customerRepository.save(customer2);
 
+		LOGGER.info("Test using find by id");
 		Optional<Customer> result = customerRepository.findById(1l);
 		if (result.isPresent()) {
 			Customer customer = result.get();
 			LOGGER.info("Customer result : {}", customer);
 		}
+
+//		Customer customerResult = customerRepository.getOne(1l);
+//		LOGGER.info("Test getOne {}", customerResult);
+
+		Customer customer11 = customerRepository.findDeadbeatCustomers();
+		LOGGER.info("customer11 {}", customer11);
 
 		Customer customer = customerRepository.findByFirstNameLike("houssem");
 		LOGGER.info("Customer result : {}", customer);
